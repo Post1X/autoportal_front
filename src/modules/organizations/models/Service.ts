@@ -13,7 +13,6 @@ export class Service extends AbstractModel {
   }
 }
 
-
 export class GetService extends AbstractModel {
   '_id': string = '';
   'title': string = '';

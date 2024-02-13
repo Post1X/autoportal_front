@@ -82,7 +82,9 @@ export const OrganizationStack = () => {
         component={WebviewOffer}
         options={{
           gestureEnabled: true,
-          ...(Platform.OS === 'ios' ? TransitionPresets.ModalPresentationIOS : TransitionPresets.DefaultTransition),
+          ...(Platform.OS === 'ios'
+            ? TransitionPresets.ModalPresentationIOS
+            : TransitionPresets.DefaultTransition),
         }}
       />
 
@@ -91,7 +93,9 @@ export const OrganizationStack = () => {
         component={WebviewPolicy}
         options={{
           gestureEnabled: true,
-          ...(Platform.OS === 'ios' ? TransitionPresets.ModalPresentationIOS : TransitionPresets.DefaultTransition),
+          ...(Platform.OS === 'ios'
+            ? TransitionPresets.ModalPresentationIOS
+            : TransitionPresets.DefaultTransition),
         }}
       />
 

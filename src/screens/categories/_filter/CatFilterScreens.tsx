@@ -68,7 +68,8 @@ export const CatFilterScreens = () => {
       </RowContainerBeetwen>
       {!isLoading ? (
         <Fragment>
-          {filterForm.category?.noService === false && organizationFilter?.typeService?.length ? (
+          {filterForm.category?.noService === false &&
+          organizationFilter?.typeService?.length ? (
             <InputSelectUI
               containerStyles={{
                 $mb: 10,

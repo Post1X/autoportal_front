@@ -52,8 +52,6 @@ export const getCategories = createAsyncThunk(
 export const getSearchServices = createAsyncThunk(
   'organizations/searchServices',
   async (query: string, {getState, dispatch}) => {
-
-    
     if (!query.length) {
       return [];
     }
@@ -109,7 +107,6 @@ export const getOrganizationList = createAsyncThunk(
       });
   },
 );
-
 
 export const getCurrentOrganization = createAsyncThunk(
   'organization/current',
@@ -226,14 +223,11 @@ export const getFavoritesAllList = createAsyncThunk(
 
     dispatch(setIsFavoritesListLoad(true));
 
-    return await organizationService
-      .getFavoritesAllList()
-      .finally(() => {
-        dispatch(setIsFavoritesListLoad(false));
-      });
+    return await organizationService.getFavoritesAllList().finally(() => {
+      dispatch(setIsFavoritesListLoad(false));
+    });
   },
 );
-
 
 export const getPersonalOrganizations = createAsyncThunk(
   'organization/my/list',
@@ -276,7 +270,6 @@ export const getContacts = createAsyncThunk('contacts/info', async () => {
   return response;
 });
 
-
 export const updateOrganization = createAsyncThunk(
   'organization/update',
   async (organization, {getState, dispatch}) => {
@@ -295,5 +288,5 @@ export const updateOrganization = createAsyncThunk(
     );
 
     return response;
-  }
+  },
 );

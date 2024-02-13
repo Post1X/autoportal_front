@@ -47,7 +47,6 @@ export const FilterModalPick = (props: FilterModalPickProps) => {
     }
   }, [props.pickList]);
 
-
   return (
     <BorderTopUI>
       <RowContainer>

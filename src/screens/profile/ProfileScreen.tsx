@@ -57,10 +57,8 @@ export const ProfileScreen = () => {
             onPress={() => {
               if (contacts?.supportLink) {
                 Linking.openURL(contacts.supportLink);
-              }
-              else {
-                Linking.openURL(contacts?.orderBanner)
-
+              } else {
+                Linking.openURL(contacts?.orderBanner);
               }
             }}
           />

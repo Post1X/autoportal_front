@@ -298,7 +298,6 @@ export const WebviewOffer: FC = function WebviewOffer() {
     {id: '69', baseText: 'Номер банковского счета  40817810760320072464'},
     {id: '70', baseText: 'Кор.счет 30101810907020000615'},
     {id: '71', baseText: 'БИК 040702615'},
-
   ];
 
   const renderItem = ({item}) => (
@@ -309,7 +308,6 @@ export const WebviewOffer: FC = function WebviewOffer() {
       <Text style={compStyles.listItemSub}>{item.listItemSub}</Text>
 
       <Text style={compStyles.baseText}>{item.baseText}</Text>
-
     </View>
   );
 
@@ -343,7 +341,7 @@ const compStyles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    marginLeft : 10,
+    marginLeft: 10,
 
     color: '#000',
     lineHeight: 24,
@@ -352,18 +350,16 @@ const compStyles = StyleSheet.create({
   },
   listItem: {
     fontSize: 16,
-    marginLeft : 10,
-
+    marginLeft: 10,
   },
   listItemSub: {
     fontSize: 16,
-    marginLeft : 20,
-
+    marginLeft: 20,
   },
   header: {
     fontSize: 18,
     marginTop: 10,
-    marginLeft : 10,
+    marginLeft: 10,
 
     color: '#000',
     lineHeight: 24,
@@ -372,9 +368,8 @@ const compStyles = StyleSheet.create({
   } as TextStyle,
   baseText: {
     fontSize: 16,
-    marginLeft : 10,
-    marginBottom : 30,
+    marginLeft: 10,
+    marginBottom: 30,
     padding: 0,
   },
-
 });

@@ -10,34 +10,27 @@ import {View} from 'react-native';
 
 interface OrgServicesProps {
   services: TypeService[];
-  titleTypeService : string | undefined;
+  titleTypeService: string | undefined;
 }
 
-export const OrgServices = ({services,titleTypeService}: OrgServicesProps) => {
+export const OrgServices = ({services, titleTypeService}: OrgServicesProps) => {
   const [isMore, setIsMore] = useState(false);
 
-  let displayTitleTypeService:string;
+  let displayTitleTypeService: string;
 
-
-  if(titleTypeService === 'Вид товара'){
+  if (titleTypeService === 'Вид товара') {
     displayTitleTypeService = 'Товары';
-  }
-  else if(titleTypeService === 'Вид услуги') {
+  } else if (titleTypeService === 'Вид услуги') {
     displayTitleTypeService = 'Услуги';
-  }
-  else if(titleTypeService === 'Тип эвакуатора') {
+  } else if (titleTypeService === 'Тип эвакуатора') {
     displayTitleTypeService = 'Тип эвакуатора';
-  }
-  else if(titleTypeService === 'Вид автострахования') {
+  } else if (titleTypeService === 'Вид автострахования') {
     displayTitleTypeService = 'Виды автострахования';
-  }
-  else if(titleTypeService === 'Вид аренды') {
+  } else if (titleTypeService === 'Вид аренды') {
     displayTitleTypeService = 'Вид аренды';
-  }
-  else if(titleTypeService === 'Аренда спецтехники') {
+  } else if (titleTypeService === 'Аренда спецтехники') {
     displayTitleTypeService = 'Вид спецтехники';
-  }
-  else if(titleTypeService === 'Тип перевозки') {
+  } else if (titleTypeService === 'Тип перевозки') {
     displayTitleTypeService = 'Виды перевозок';
   }
 

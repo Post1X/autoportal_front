@@ -106,7 +106,8 @@ export class OrganizationHelper {
       name: organization.name,
       city: organization.city,
       category: organization.categoryId,
-      typeService: organization.services.map(service => service.service._id) || [],
+      typeService:
+        organization.services.map(service => service.service._id) || [],
       brandCar: organization.brandsCars.map(item => item._id) || [],
       schedule: organization.schedule,
       address: organization.address,

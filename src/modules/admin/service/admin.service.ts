@@ -4,6 +4,7 @@ import AbstractServiceRepository from '../../../settings/abstrcations/repositori
 import {Dealer} from '../models/Dealer';
 import {AdminApiService} from './admin.api';
 import {Message} from '../../auth/models/Message';
+import {tokenService} from '../../auth/services/token/token.fabric';
 
 class AdminService extends AbstractServiceRepository {
   api: AdminApiService;
@@ -34,7 +35,6 @@ class AdminService extends AbstractServiceRepository {
   createUpdateBanner = async (dto: CreateBannerDTO, bannerId?: string) => {
     if (bannerId) {
       const {data} = await this.api.updateBanner(dto, bannerId);
-     
 
       return this.create<Message>(Message, data);
     }
@@ -54,6 +54,24 @@ class AdminService extends AbstractServiceRepository {
     const {data} = await this.api.banUser(id);
 
     return this.create<Message>(Message, data);
+  };
+  deleteUser = async () => {
+    try {
+      const currentToken = await tokenService.getTokenData();
+      if (!currentToken) {
+        ('Отсутствует токен аутентификации');
+        throw new Error('Отсутствует токен аутентификации.');
+      }
+
+      console.log(' токен аутентификации', currentToken);
+
+      tokenService.setAccessToken(currentToken);
+      const {data} = await this.api.deleteUser();
+
+      return this.create<Message>(Message, data);
+    } catch (error) {
+      throw error;
+    }
   };
 }
 

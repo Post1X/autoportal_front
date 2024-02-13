@@ -19,7 +19,6 @@ interface CreateDayTimeWorkProps {
 }
 
 export const CreateDayTimeWork = (props: CreateDayTimeWorkProps) => {
-
   const [isActive, setIsActive] = useState(false);
   const [isAllDay, setIsAllDay] = useState(false);
 
@@ -63,10 +62,11 @@ export const CreateDayTimeWork = (props: CreateDayTimeWorkProps) => {
   const memoizedSch = useMemo(() => props.sch, [props.sch]);
 
   useEffect(() => {
-    const dayInSchedule = memoizedSch && memoizedSch.some((item) => item.title === dayOfWeek);
+    const dayInSchedule =
+      memoizedSch && memoizedSch.some(item => item.title === dayOfWeek);
 
     if (dayInSchedule) {
-      const currentDay = memoizedSch.find((item) => item.title === dayOfWeek);
+      const currentDay = memoizedSch.find(item => item.title === dayOfWeek);
       setfrom(currentDay?.from || '10:00');
       setto(currentDay?.to || '19:00');
       setIsAllDay(currentDay?.isAllDay || false);
@@ -78,7 +78,6 @@ export const CreateDayTimeWork = (props: CreateDayTimeWorkProps) => {
       setIsActive(false);
     }
   }, [dayOfWeek, memoizedSch]);
-
 
   useFocusEffect(
     useCallback(() => {

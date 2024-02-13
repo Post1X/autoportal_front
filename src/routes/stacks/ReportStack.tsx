@@ -3,13 +3,11 @@ import React from 'react';
 import {Screens} from '../models/Screens';
 import {ReportScreen} from '../../screens/reports/ReportScreen';
 import {ReportSendModal} from '../../screens/reports/questions/ReportSendModal';
-import { useAppSelector } from '../../settings/redux/hooks';
+import {useAppSelector} from '../../settings/redux/hooks';
 
 const Stack = createStackNavigator();
 
 export const ReportStack = () => {
-
-
   return (
     <Stack.Group screenOptions={{headerShown: false}}>
       <Stack.Screen name={Screens.REPORT_MODAL} component={ReportScreen} />

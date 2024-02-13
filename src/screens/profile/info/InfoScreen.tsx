@@ -91,10 +91,12 @@ export const InfoScreen = () => {
                 $mb={15}
                 text={'Договор на обработку персональных данных'}
               /> */}
-              {/* <UnderLineText
-                text={'Удалить аккаунт'}
-                onPress={() => handleGoToScreen(Screens.REMOVE_PROFILE_MODAL)}
-              /> */}
+              {
+                <UnderLineText
+                  text={'Удалить аккаунт'}
+                  onPress={() => handleGoToScreen(Screens.REMOVE_PROFILE_MODAL)}
+                />
+              }
             </MainContainer>
           </BorderTopUI>
         </ColumnContainerBetweenFlex>

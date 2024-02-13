@@ -1,4 +1,3 @@
-
 import {DefaultCreateForm} from './../form/CreateForm';
 import {Screens} from './../../../routes/models/Screens';
 import {createAsyncThunk} from '@reduxjs/toolkit';
@@ -25,7 +24,7 @@ export const createOrganization = createAsyncThunk(
     }
 
     dispatch(setDefaultCreateForm(DefaultCreateForm));
- 
+
     if ((response as SuccessOrganization).organizationId && checkRelease) {
       Navigation.navigate(Screens.SUB_ORGANIZATION, {
         organizationId: (response as SuccessOrganization).organizationId,
@@ -37,11 +36,9 @@ export const createOrganization = createAsyncThunk(
   },
 );
 
-
 export const checkRelease = createAsyncThunk(
   'organization/checkRelease',
   async () => {
     return await organizationService.checkSubStore();
   },
 );
-

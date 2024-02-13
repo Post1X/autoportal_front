@@ -12,8 +12,6 @@ interface OrgSchedulesProps {
 export const OrgSchedules = (props: OrgSchedulesProps) => {
   const schedule = DateHelper.buildScheduleText(props.schedule);
 
-
-
   return (
     <BorderTopUI $ph={20} $pv={20}>
       <MainContainer>

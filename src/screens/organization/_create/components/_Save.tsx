@@ -12,13 +12,17 @@ interface CreateSaveProps {
 export const CreateSave = (props: CreateSaveProps) => {
   return (
     <BorderTopUI $pt={25} $pb={25} $ph={20}>
-      {props.isEdit ?  <ButtonUI
-        title={'Удалить организацию'}
-        $type={'border'}
-        $mb={10}
-        $btnDisabled={props.isDisabled}
-        onPress={props.onRemovePress}
-      /> : "" }
+      {props.isEdit ? (
+        <ButtonUI
+          title={'Удалить организацию'}
+          $type={'border'}
+          $mb={10}
+          $btnDisabled={props.isDisabled}
+          onPress={props.onRemovePress}
+        />
+      ) : (
+        ''
+      )}
       <ButtonUI
         title={'Сохранить'}
         $btnDisabled={props.isDisabled}

@@ -125,18 +125,14 @@ export class OrganizationsService extends AbstractServiceRepository {
     }
     try {
       const response = await this.api.getOrganizationList(dto);
-      const { data, status } = response;
-    
+      const {data, status} = response;
 
       return this.createList<OrganizationList>(OrganizationList, data);
-
-      
     } catch (error) {
       console.error('Произошла ошибка при запросе:', error);
     }
-    
   };
-  
+
   getCurrentOrganization = async (_id: string) => {
     const {data} = await this.api.getCurrentOrganization(_id);
 
@@ -161,7 +157,7 @@ export class OrganizationsService extends AbstractServiceRepository {
       return this.create<Message>(Message, data);
     } catch (error) {
       console.log('ошибка при удалении орги', error);
-      throw error; 
+      throw error;
     }
   };
 
@@ -243,7 +239,6 @@ export class OrganizationsService extends AbstractServiceRepository {
 
     return this.create<SuccessOrganization>(SuccessOrganization, data);
   };
-  
 
   addFavoriteOrganization = async (id: string) => {
     const {data} = await this.api.addFavoriteOrganization(id);
@@ -333,4 +328,3 @@ export class OrganizationsService extends AbstractServiceRepository {
 }
 
 export const organizationService = new OrganizationsService();
-

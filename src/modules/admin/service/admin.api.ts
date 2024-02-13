@@ -47,4 +47,9 @@ export class AdminApiService extends AbstractApiRepository {
       url: Endpoints.banUser(id),
     });
   };
+  deleteUser = () => {
+    return this.apiClient.delete({
+      url: Endpoints.deleteUser(),
+    });
+  };
 }

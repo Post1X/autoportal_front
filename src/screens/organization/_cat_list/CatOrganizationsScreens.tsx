@@ -33,7 +33,6 @@ export const CatOrganizationsScreens = () => {
     selectOrganizationsValues,
   );
 
-
   const dispatch = useAppDispatch();
 
   const categoriesModalRef = useRef<Modalize>(null);

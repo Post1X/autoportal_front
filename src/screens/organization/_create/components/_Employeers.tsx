@@ -36,9 +36,7 @@ import {selectOrganizationsValues} from '../../../../modules/organizations/Organ
 export const CreateEmployeers = () => {
   const select = useAppSelector(selectEmployeersValues);
 
-
   const dispatch = useAppDispatch();
- 
 
   const [isShow, setShow] = useState(false);
 

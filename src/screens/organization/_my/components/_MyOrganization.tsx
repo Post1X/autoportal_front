@@ -191,7 +191,6 @@ export const MyOrganization = ({
                     if (contacts.supportLink) {
                       Linking.openURL(contacts.supportLink);
                     }
-                   
                   }}
                   ag={Ag['400_12']}
                   text={'Тех.поддержка'}

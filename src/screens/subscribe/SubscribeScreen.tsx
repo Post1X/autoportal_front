@@ -31,7 +31,6 @@ export const SubscribeScreen = () => {
 
   const {subInfo} = useAppSelector(selectOrganizationsValues);
 
-
   const dispatch = useAppDispatch();
 
   const [type, setType] = useState<'month' | 'year'>('month');
@@ -102,14 +101,12 @@ export const SubscribeScreen = () => {
           <TextUI
             ag={Ag['500_25']}>{`${subInfo?.month_amount} Р / месяц`}</TextUI>
 
-{Boolean(subInfo?.free_period) && (
-              <TextUI ag={Ag['500_16']}>
-                {OrganizationHelper.freeMonthSubText(subInfo?.free_period!)}
-              </TextUI>
-            )}
+          {Boolean(subInfo?.free_period) && (
+            <TextUI ag={Ag['500_16']}>
+              {OrganizationHelper.freeMonthSubText(subInfo?.free_period!)}
+            </TextUI>
+          )}
         </ViewPress>
-
-        
 
         <ViewPress
           $bg={ColorsUI.white}

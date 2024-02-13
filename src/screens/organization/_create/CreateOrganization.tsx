@@ -1,4 +1,3 @@
-
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {ColumnContainerFlex} from '../../../template/containers/ColumnContainer';
 import {BottomMenu} from '../../../components/bottomMenu/BottomMenu';
@@ -396,8 +395,8 @@ export const CreateOrganizationScreen = (props: CreateScreenProps) => {
       </KeyboardAwareScrollView>
 
       <FilterModal
-          titleTypeService={organizationFilter?.titleTypeService}
-          isCreate
+        titleTypeService={organizationFilter?.titleTypeService}
+        isCreate
         createForm={createForm}
         typeModal={typeModal}
         modalizeRef={filterModalRef}
@@ -415,4 +414,3 @@ export const CreateOrganizationScreen = (props: CreateScreenProps) => {
     </ColumnContainerFlex>
   );
 };
-

@@ -4,7 +4,10 @@ import {useAppDispatch, useAppSelector} from '../../../../settings/redux/hooks';
 import {selectOrganizationsValues} from '../../../../modules/organizations/OrganizationsSlice';
 import Navigation from '../../../../routes/navigation/Navigation';
 import {Screens} from '../../../../routes/models/Screens';
-import { deleteOrganization, getPersonalOrganizations } from '../../../../modules/organizations/_thunks';
+import {
+  deleteOrganization,
+  getPersonalOrganizations,
+} from '../../../../modules/organizations/_thunks';
 
 export const RemoveOrganizationModal = () => {
   const {currentOrganization} = useAppSelector(selectOrganizationsValues);

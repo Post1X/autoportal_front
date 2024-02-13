@@ -47,7 +47,6 @@ export const CitiesModal = (props: CitiesFilterProps) => {
   );
 
   const handlePickCity = (city: string) => {
-
     if (props.onPickCity) {
       props.onPickCity(city);
     } else {

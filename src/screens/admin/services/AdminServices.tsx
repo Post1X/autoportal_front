@@ -31,13 +31,11 @@ export const AdminServices = () => {
 
   const addServiceModal = useRef<Modalize>(null);
 
-
   const {services, filterForm} = useAppSelector(selectOrganizationsValues);
 
   const dispatch = useAppDispatch();
 
   const category = filterForm.category;
-
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -68,7 +66,7 @@ export const AdminServices = () => {
             onPress={handleOpenModalCategory}
           />
         </MainContainer>
-  
+
         {category ? (
           category.noService === false ? (
             <RowContainerBeetwen
@@ -112,7 +110,6 @@ export const AdminServices = () => {
     ),
     [category],
   );
-  
 
   return (
     <ColumnContainerFlex>
@@ -125,13 +122,15 @@ export const AdminServices = () => {
           renderItem={renderItem}
           ListEmptyComponent={
             <Fragment>
-              {!isLoading && Boolean(category) && category?.noService === false && (
-                <MainContainer $mt={20}>
-                  <TextUI ag={Ag['500_16']} $align={'center'}>
-                    {'В выбранной категории нет услуг'}
-                  </TextUI>
-                </MainContainer>
-              )}
+              {!isLoading &&
+                Boolean(category) &&
+                category?.noService === false && (
+                  <MainContainer $mt={20}>
+                    <TextUI ag={Ag['500_16']} $align={'center'}>
+                      {'В выбранной категории нет услуг'}
+                    </TextUI>
+                  </MainContainer>
+                )}
             </Fragment>
           }
           ListFooterComponent={
