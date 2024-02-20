@@ -4,19 +4,19 @@ export class MaskHelper {
       return;
     }
 
-    if (text.length <= 4 && text.length !== 1) {
-      return '';
-    }
-
-    if (text.length === 1) {
-      text = '7' + text;
-    }
-
     const cleaned = text.replace(/\D/g, '');
+
+    if (cleaned.length === 1) {
+      text = '7' + cleaned;
+    } else if (cleaned.length === 2) {
+      text = '8' + cleaned;
+    } else if (cleaned.length > 11) {
+      cleaned = cleaned.slice(0, 11);
+    }
 
     let formattedPhoneNumber = '+';
 
-    for (let i = 0; i < cleaned.length && i < 11; i++) {
+    for (let i = 0; i < cleaned.length; i++) {
       if (i === 1) {
         formattedPhoneNumber += ' (' + cleaned[i];
       } else if (i === 4) {
@@ -32,6 +32,6 @@ export class MaskHelper {
   };
 
   static clearFormat = (phone: string) => {
-    return '+' + phone.replace(/\D/g, '');
+    return '+' + phone.replace(/\D/g, '').slice(0, 11);
   };
 }

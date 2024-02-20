@@ -12,6 +12,8 @@ export const getCode = createAsyncThunk(
   async (_, {getState, dispatch}) => {
     const {type, loginForm, registerForm} = (getState() as RootState).authSlice;
 
+
+
     if (
       MaskHelper.clearFormat(loginForm.phone_number) === appConfig.adminPhone
     ) {
